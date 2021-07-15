@@ -23,10 +23,12 @@ body{
 .inner{
   width: 95%;
   margin: auto;
+  padding: 20px 0;
   display: flex;
   gap: 20px;
   justify-content: center;
   flex-direction: row;
+  flex-wrap: wrap-reverse;
 }
 
 #media-tags{
@@ -98,4 +100,10 @@ label{
 
 #genre{
   color: #888;
+}
+
+@media(max-width:1280px){
+  .container{
+    width: 100%;
+  }
 }
