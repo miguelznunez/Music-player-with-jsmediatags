@@ -37,7 +37,6 @@ body{
   display: flex;
   flex-direction: column;
   text-align: center;
-
 }
 
 .song-data{
@@ -65,11 +64,11 @@ body{
 
 .song-play{
   height: 50px;
-  border: 1px solid transparent;
+  margin-top: 10px;
+  margin-bottom: 5px;
 }
 
 label{
-  margin-top: 5px;
   cursor: pointer;
   border-radius: 5px;
   width: 100%;
