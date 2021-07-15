@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" type="image/png" href="note.png" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jsmediatags/3.9.5/jsmediatags.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+  <title>Music Player</title>
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="inner">
+      <div id="media-tags">
+        <div class="song-data">
+          <h2 id="artist">Artist</h2>
+          <h3 id="title">Title</h3>
+          <p id="album">Album</p>
+          <p id="genre">Genre</p>
+        </div>
+        <div class="song-play">
+          <audio id="audio" controls>
+            <source src="" id="src" />
+          </audio>
+        </div>
+        <div class="song-file" id="songDropArea">
+          <label for="songUpload"><i class="fas fa-cloud-upload-alt"></i> Upload a Song</label>
+          <input type="file" id="songUpload" accept=".mp3, .wav">
+        </div>
+      </div>
+      <div id="cover">
+        <img id="img">
+      </div>
+    </div> 
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
