@@ -12,7 +12,7 @@ input.addEventListener("change", (event) => {
   var file = event.target.files[0];
   jsmediatags.read(file, {
     onSuccess: function(tag) { 
-    try{
+    try{ 
       const data = tag.tags.picture.data;
       const format = tag.tags.picture.format;
 
@@ -30,7 +30,7 @@ input.addEventListener("change", (event) => {
       console.log(error);
       document.getElementById("img").setAttribute('src', '');
       document.getElementById("img").style.display = 'none';
-      document.getElementById("artist").textContent = 'Unknown';
+      document.getElementById("artist").textContent = `${document.getElementById("songUpload").value.split(/(\\|\/)/g).pop()}`;
       document.getElementById("title").textContent = 'Unknown';
       document.getElementById("album").textContent = 'Unknown';
       document.getElementById("genre").textContent = 'Unknown';
@@ -41,7 +41,7 @@ input.addEventListener("change", (event) => {
     console.log(error);
     document.getElementById("img").setAttribute('src', '');
     document.getElementById("img").style.display = 'none';
-    document.getElementById("artist").textContent = 'Unknown';
+    document.getElementById("artist").textContent = `${document.getElementById("songUpload").value.split(/(\\|\/)/g).pop()}`;
     document.getElementById("title").textContent = 'Unknown';
     document.getElementById("album").textContent = 'Unknown';
     document.getElementById("genre").textContent = 'Unknown';
