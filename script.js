@@ -20,6 +20,8 @@ input.addEventListener("change", (event) => {
       for (let i = 0; i < data.length; i++) {
           base64String += String.fromCharCode(data[i]);
       }
+      document.getElementById("cover").style.backgroundImage = 'none';
+      document.getElementById("cover").style.backgroundColor = 'white';
       document.getElementById("img").setAttribute('src', `data:${format};base64,${window.btoa(base64String)}`);
       document.getElementById("img").style.display = 'block';
       document.getElementById("artist").textContent = tag.tags.artist;
@@ -28,6 +30,7 @@ input.addEventListener("change", (event) => {
       document.getElementById("genre").textContent = tag.tags.genre;
     }catch(error){
       console.log(error);
+      document.getElementById("cover").style.backgroundImage = 'url(music.jpg)';
       document.getElementById("img").setAttribute('src', '');
       document.getElementById("img").style.display = 'none';
       document.getElementById("artist").textContent = `${document.getElementById("songUpload").value.split(/(\\|\/)/g).pop()}`;
@@ -39,6 +42,7 @@ input.addEventListener("change", (event) => {
   },
   onError: function(error) {
     console.log(error);
+    document.getElementById("cover").style.backgroundImage = 'url(music.jpg)';
     document.getElementById("img").setAttribute('src', '');
     document.getElementById("img").style.display = 'none';
     document.getElementById("artist").textContent = `${document.getElementById("songUpload").value.split(/(\\|\/)/g).pop()}`;
