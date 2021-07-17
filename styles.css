@@ -3,10 +3,10 @@
 *{
   padding: 0;
   margin: 0;
+  box-sizing: border-box;
 }
 
 body{
-  overflow-x: hidden;
   background-color: whitesmoke;
   font-family: 'Oswald', sans-serif;
 }
@@ -20,7 +20,7 @@ body{
   align-items: center;
 }
 
-.inner{
+.inner-container{
   width: 95%;
   margin: auto;
   padding: 20px 0;
@@ -32,15 +32,17 @@ body{
 }
 
 #media-tags{
-  width: 300px;
-  height: 400px;
+  width: 350px;
+  height: 350px;
   display: flex;
   flex-direction: column;
   text-align: center;
 }
 
 .song-data{
-  height: 300px;
+  width: 100%;
+  height: 100%;
+  margin: auto;
   display: flex;
   border-radius: 5px;
   justify-content: center;
@@ -48,26 +50,25 @@ body{
   flex-direction: column;
   gap: 10px;
   padding: 5px;
-  background-color: white;
   border: 1px solid lightgray;
-  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.9);
 }
 
-.song-file{
-  height: 50px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.song-file input{
-  border: 1px dotted lightgray;
+#album{
+  color: #888;
 }
 
 .song-play{
-  height: 50px;
+  height: auto;
   margin-top: 10px;
   margin-bottom: 5px;
+}
+
+.song-file{
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 label{
@@ -81,28 +82,17 @@ label{
 #songUpload{
   opacity: 0;
   position: absolute;
-   z-index: -1;
+  z-index: -1;
 }
 
 #cover{
-  display: block;
-  width: 500px;
-  height: 400px;
+  width: 350px;
+  height: 350px;
   border-radius: 5px;
   background-size: cover;
   background-position: center;
   background-image: url('music.jpg');
   box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.9);
-}
-
-#cover img{
-  width: 100%;
-  height: 400px;
-  border-radius: 5px;
-}
-
-#genre{
-  color: #888;
 }
 
 @media(max-width:1280px){
@@ -111,14 +101,11 @@ label{
   }
 }
 
-@media(max-width:880px){
-  .inner{
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+@media(max-width:768px){
+  #media-tags{
+    height: auto;
   }
-
-  #cover, #cover img{
-    display: none;
+  .song-data{
+    font-size: 0.8rem;
   }
 }
