@@ -58,6 +58,7 @@ body{
 }
 
 .song-play{
+  width: 100%;
   height: auto;
   margin-top: 10px;
   margin-bottom: 5px;
@@ -107,5 +108,11 @@ label{
   }
   .song-data{
     font-size: 0.8rem;
+  }
+}
+
+@media(max-width:468px){
+  #media-tags, #cover{
+    width: 100%;
   }
 }
