@@ -14,32 +14,37 @@
 
 <body>
 
-  <div class="container">
-    <div class="inner-container">
-      
-      <div id="media-tags">
+  <header>
+    <div class="nav">
+      <h1><i class="fas fa-headphones"></i> Music Player</h1>
+    </div>
+  </header>
 
-        <div class="song-data">
-          <h2 id="title">Title</h2>
-          <h3 id="artist">Artist</h3>
-          <p id="album">Album</p>
+  <section>
+    <div class="container">
+      <div class="inner-container">
+        <div id="media-tags">
+          <div class="song-data">
+            <h2 id="title">Title</h2>
+            <h3 id="artist">Artist</h3>
+            <p id="album">Album</p>
+          </div>
+          <div class="song-play">
+            <audio id="audio" controls>
+              <source src="" id="src" />
+            </audio>
+          </div>
+          <div class="song-file" id="songDropArea">
+            <label for="songUpload"><i class="fas fa-cloud-upload-alt"></i> Upload a Song</label>
+            <input type="file" id="songUpload" accept=".mp3, .wav">
+          </div>
         </div>
-        <div class="song-play">
-          <audio id="audio" controls>
-            <source src="" id="src" />
-          </audio>
-        </div>
-        <div class="song-file" id="songDropArea">
-          <label for="songUpload"><i class="fas fa-cloud-upload-alt"></i> Upload a Song</label>
-          <input type="file" id="songUpload" accept=".mp3, .wav">
-        </div>
-        
+        <aside>
+          <div id="cover"></div>
+        </aside>
       </div>
-
-      <div id="cover"></div>
-
     </div> 
-  </div>
+  </section>
 
   <script src="script.js"></script>
 </body>

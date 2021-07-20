@@ -7,17 +7,25 @@
 }
 
 body{
-  background-color: whitesmoke;
   font-family: 'Oswald', sans-serif;
+}
+
+.nav{
+  height: 90px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0;
 }
 
 .container{
   width: 1280px;
-  height: 100vh;
+  min-height: calc(100vh - 90px);
   margin: auto;
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: whitesmoke;
 }
 
 .inner-container{
@@ -78,6 +86,7 @@ label{
   width: 100%;
   padding: 10px;
   border: 1px solid lightgray;
+      background-color: white;
 }
 
 #songUpload{
