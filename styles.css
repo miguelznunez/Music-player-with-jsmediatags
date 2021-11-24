@@ -19,6 +19,10 @@ body{
   padding: 20px 0;
 }
 
+.main-container{
+  background-color: whitesmoke;
+}
+
 .container{
   width: 1280px;
   min-height: calc(100vh - 90px);
@@ -26,7 +30,6 @@ body{
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: whitesmoke;
 }
 
 .inner-container{
