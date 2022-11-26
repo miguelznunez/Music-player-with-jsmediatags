@@ -20,13 +20,13 @@ function accessMediaTags(file) {
       for (let i = 0; i < data.length; i++) {
           base64String += String.fromCharCode(data[i])
       }
-      displayMediaTags('url(data:'+format+';base64,'+window.btoa(base64String)+')', tag.tags.title, tag.tags.artist, tag.tags.album)
+      displayMediaTags(`url(data:${format};base64,${window.btoa(base64String)})`, tag.tags.title, tag.tags.artist, tag.tags.album)
     }catch(error){
-      displayMediaTags('url(music.jpg)', `${document.getElementById("songUpload").value.split(/(\\|\/)/g).pop()}`, 'Unknown', 'Unknown')
+      displayMediaTags("url(music.jpg)", upload.value.split(/(\\|\/)/g).pop(), "Unknown", "Unknown")
     }
   },
   onError: function(error) {
-    displayMediaTags('url(music.jpg)', `${document.getElementById("songUpload").value.split(/(\\|\/)/g).pop()}`, 'Unknown', 'Unknown')
+    displayMediaTags("url(music.jpg)", upload.value.split(/(\\|\/)/g).pop(), "Unknown", "Unknown")
   }
   })
 }
