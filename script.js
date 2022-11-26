@@ -3,10 +3,9 @@ const audio = document.querySelector("#audio")
 const source = document.querySelector("#src")
 
 upload.addEventListener("change", (event) => {
-  const files = event.target.files
   const file = event.target.files[0]
   accessMetadata(file)
-  source.src = URL.createObjectURL(files[0])
+  source.src = URL.createObjectURL(file)
   audio.load()
 })
 
