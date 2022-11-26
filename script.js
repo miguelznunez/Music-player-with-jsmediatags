@@ -5,12 +5,12 @@ const source = document.querySelector("#src")
 upload.addEventListener("change", (event) => {
   const files = event.target.files
   const file = event.target.files[0]
-  accessMediaTags(file)
+  accessMetadata(file)
   source.src = URL.createObjectURL(files[0])
   audio.load()
 })
 
-function accessMediaTags(file) {
+function accessMetadata(file) {
   jsmediatags.read(file, {
     onSuccess: function(tag) { 
     try{ 
@@ -20,17 +20,18 @@ function accessMediaTags(file) {
       for (let i = 0; i < data.length; i++) {
           base64String += String.fromCharCode(data[i])
       }
-      displayMediaTags(`url(data:${format};base64,${window.btoa(base64String)})`, tag.tags.title, tag.tags.artist, tag.tags.album)
+      displayMetadata(`url(data:${format};base64,${window.btoa(base64String)})`, tag.tags.title, tag.tags.artist, tag.tags.album)
     }catch(error){
-      displayMediaTags("url(music.jpg)", upload.value.split(/(\\|\/)/g).pop(), "Unknown", "Unknown")
+      displayMetadata("url(music.jpg)", upload.value.split(/(\\|\/)/g).pop(), "Unknown", "Unknown")
     }
   },
   onError: function(error) {
-    displayMediaTags("url(music.jpg)", upload.value.split(/(\\|\/)/g).pop(), "Unknown", "Unknown")
+    displayMetadata("url(music.jpg)", upload.value.split(/(\\|\/)/g).pop(), "Unknown", "Unknown")
   }
   })
 }
-function displayMediaTags(cover, title, artist, album){
+
+function displayMetadata(cover, title, artist, album){
   document.querySelector("#cover").style.backgroundImage = cover
   document.querySelector("#title").textContent = title
   document.querySelector("#artist").textContent = artist
