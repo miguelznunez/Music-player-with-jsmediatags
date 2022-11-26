@@ -17,7 +17,6 @@ body{
   justify-content: center;
   align-items: center;
   padding: 20px 0;
-  background-color: whitesmoke;
 }
 
 .container{
@@ -27,7 +26,6 @@ body{
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: whitesmoke;
 }
 
 .inner-container{
