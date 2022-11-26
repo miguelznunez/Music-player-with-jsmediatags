@@ -30,10 +30,9 @@ function accessMediaTags(file) {
   }
   })
 }
-
 function displayMediaTags(cover, title, artist, album){
-  document.getElementById("cover").style.backgroundImage = cover
-  document.getElementById("title").textContent = title
-  document.getElementById("artist").textContent = artist
-  document.getElementById("album").textContent = album
+  document.querySelector("#cover").style.backgroundImage = cover
+  document.querySelector("#title").textContent = title
+  document.querySelector("#artist").textContent = artist
+  document.querySelector("#album").textContent = album
 }
