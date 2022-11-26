@@ -1,16 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
 
-*{
+* {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
 }
 
-body{
+body {
   font-family: 'Oswald', sans-serif;
 }
 
-.nav{
+.nav {
   width: 100%;
   height: 90px;
   display: flex;
@@ -19,7 +19,7 @@ body{
   padding: 20px 0;
 }
 
-.container{
+.container {
   width: 1280px;
   min-height: calc(100vh - 90px);
   margin: auto;
@@ -28,7 +28,7 @@ body{
   align-items: center;
 }
 
-.inner-container{
+.inner-container {
   width: 95%;
   margin: auto;
   padding: 20px 0;
@@ -39,7 +39,7 @@ body{
   flex-wrap: wrap-reverse;
 }
 
-#media-tags{
+.music-player {
   width: 350px;
   height: 350px;
   display: flex;
@@ -47,7 +47,7 @@ body{
   text-align: center;
 }
 
-.song-data{
+.metadata {
   width: 100%;
   height: 100%;
   margin: auto;
@@ -61,18 +61,18 @@ body{
   border: 1px solid lightgray;
 }
 
-#album{
+.metadata #album {
   color: #888;
 }
 
-.song-play{
+.controller {
   width: 100%;
   height: auto;
   margin-top: 10px;
   margin-bottom: 5px;
 }
 
-.song-file{
+.upload{
   width: 100%;
   height: auto;
   display: flex;
@@ -80,22 +80,22 @@ body{
   align-items: center;
 }
 
-label{
+.upload label {
   cursor: pointer;
   border-radius: 5px;
   width: 100%;
   padding: 10px;
   border: 1px solid lightgray;
-      background-color: white;
+  background-color: white;
 }
 
-#songUpload{
+.upload #upload {
   opacity: 0;
   position: absolute;
   z-index: -1;
 }
 
-#cover{
+#cover {
   width: 350px;
   height: 350px;
   border-radius: 5px;
@@ -105,23 +105,26 @@ label{
   box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.9);
 }
 
-@media(max-width:1280px){
-  .container{
+@media(max-width:1280px) {
+  .container {
     width: 100%;
   }
 }
 
-@media(max-width:768px){
-  #media-tags{
+@media(max-width:768px) {
+  .music-player {
     height: auto;
   }
-  .song-data{
+
+  .metadata {
     font-size: 0.8rem;
   }
 }
 
-@media(max-width:468px){
-  #media-tags, #cover{
+@media(max-width:468px) {
+
+  .metadata,
+  #cover {
     width: 100%;
   }
 }
