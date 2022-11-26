@@ -8,45 +8,46 @@
   <link rel="shortcut icon" type="image/png" href="note.png" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jsmediatags/3.9.5/jsmediatags.min.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="style.css">
   <title>Music Player</title>
 </head>
 
 <body>
 
-  <header>
-    <div class="nav">
-      <h1><i class="fas fa-headphones"></i> Music Player</h1>
-    </div>
-  </header>
 
-  <section>
-    <div class="container">
-      <div class="inner-container">
-        <div id="media-tags">
-          <div class="song-data">
-            <h2 id="title">Title</h2>
-            <h3 id="artist">Artist</h3>
-            <p id="album">Album</p>
-          </div>
-          <div class="song-play">
-            <audio id="audio" controls>
-              <source src="" id="src" />
-            </audio>
-          </div>
-          <div class="song-file" id="songDropArea">
-            <label for="songUpload"><i class="fas fa-cloud-upload-alt"></i> Upload a Song</label>
-            <input type="file" id="songUpload" accept=".mp3, .wav">
-          </div>
+  <div class="nav">
+    <h1><i class="fas fa-headphones"></i> Music Player</h1>
+  </div>
+
+  <div class="container">
+    <div class="inner-container">
+      <div class="music-player">
+
+        <div class="metadata">
+          <h2 id="title">Title</h2>
+          <h3 id="artist">Artist</h3>
+          <p id="album">Album</p>
         </div>
-        <aside>
-          <div id="cover"></div>
-        </aside>
+
+        <div class="controller">
+          <audio id="audio" controls>
+            <source src="" id="src" />
+          </audio>
+        </div>
+
+        <div class="upload">
+          <label for="upload"><i class="fas fa-cloud-upload-alt"></i> Upload a Song</label>
+          <input type="file" id="upload" accept=".mp3, .wav">
+        </div>
       </div>
-    </div> 
-  </section>
+
+      <div id="cover"></div>
+
+    </div>
+  </div>
 
   <script src="script.js"></script>
+
 </body>
 
 </html>
