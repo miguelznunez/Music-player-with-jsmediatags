@@ -1,46 +1,39 @@
-const mediaTags = document.querySelector('#media-tags');
-var input = document.querySelector('input');
-var songUpload = document.querySelector('#songUpload');
+const upload = document.querySelector("#upload")
+const audio = document.querySelector("#audio")
+const source = document.querySelector("#src")
 
-songUpload.addEventListener("change", (event) => {
-    var files = event.target.files;
-    document.getElementById("src").setAttribute("src", URL.createObjectURL(files[0]));
-    document.getElementById("audio").load();
+upload.addEventListener("change", (event) => {
+  const files = event.target.files
+  const file = event.target.files[0]
+  accessMediaTags(file)
+  source.src = URL.createObjectURL(files[0])
+  audio.load()
 })
 
-input.addEventListener("change", (event) => {
-  var file = event.target.files[0];
+function accessMediaTags(file) {
   jsmediatags.read(file, {
     onSuccess: function(tag) { 
     try{ 
-      // Array buffer to base64
-      const data = tag.tags.picture.data;
-      const format = tag.tags.picture.format;
-      let base64String = "";
+      const data = tag.tags.picture.data
+      const format = tag.tags.picture.format
+      let base64String = ""
       for (let i = 0; i < data.length; i++) {
-          base64String += String.fromCharCode(data[i]);
+          base64String += String.fromCharCode(data[i])
       }
-      document.getElementById("cover").style.backgroundImage = 'url(data:'+format+';base64,'+window.btoa(base64String)+')';
-      document.getElementById("title").textContent = tag.tags.title;
-      document.getElementById("artist").textContent = tag.tags.artist;
-      document.getElementById("album").textContent = tag.tags.album;
+      displayMediaTags('url(data:'+format+';base64,'+window.btoa(base64String)+')', tag.tags.title, tag.tags.artist, tag.tags.album)
     }catch(error){
-      console.log(error);
-      document.getElementById("cover").style.backgroundImage = 'url(music.jpg)';
-      document.getElementById("title").textContent = `${document.getElementById("songUpload").value.split(/(\\|\/)/g).pop()}`;
-      document.getElementById("artist").textContent = 'Unknown';
-      document.getElementById("album").textContent = 'Unknown';
+      displayMediaTags('url(music.jpg)', `${document.getElementById("songUpload").value.split(/(\\|\/)/g).pop()}`, 'Unknown', 'Unknown')
     }
-    
   },
   onError: function(error) {
-    console.log(error);
-    document.getElementById("cover").style.backgroundImage = 'url(music.jpg)';
-    document.getElementById("title").textContent = `${document.getElementById("songUpload").value.split(/(\\|\/)/g).pop()}`;
-    document.getElementById("artist").textContent = 'Unknown';
-    document.getElementById("album").textContent = 'Unknown';
+    displayMediaTags('url(music.jpg)', `${document.getElementById("songUpload").value.split(/(\\|\/)/g).pop()}`, 'Unknown', 'Unknown')
   }
   })
-})
+}
 
-
+function displayMediaTags(cover, title, artist, album){
+  document.getElementById("cover").style.backgroundImage = cover
+  document.getElementById("title").textContent = title
+  document.getElementById("artist").textContent = artist
+  document.getElementById("album").textContent = album
+}
